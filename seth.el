@@ -10,3 +10,5 @@
 (require 'sf-email)
 (require 'sf-bbdb)
 
+(server-start)
+
