@@ -2,3 +2,5 @@ loaddefs.el*
 backups/*
 *elc
 places
+extra-*
+auto-save-list
