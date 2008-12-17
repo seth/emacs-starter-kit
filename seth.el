@@ -7,3 +7,6 @@
 
 (require 'starter-kit-org)
 (require 'sf-misc)
+(require 'sf-email)
+(require 'sf-bbdb)
+
