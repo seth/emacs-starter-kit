@@ -9,6 +9,7 @@
 (require 'sf-misc)
 (require 'sf-email)
 (require 'sf-bbdb)
+(require 'sf-mycrypt)
 
 (server-start)
 
