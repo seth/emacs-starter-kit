@@ -1,6 +1,9 @@
 loaddefs.el*
 backups/*
+auto-save-list
 *elc
 places
 extra-*
-auto-save-list
+url/cookies
+elpa-to-submit/jabber/jabber.info
+
