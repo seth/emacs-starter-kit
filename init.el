@@ -49,6 +49,7 @@
 (require 'starter-kit-registers)
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
+(require 'starter-kit-perl)
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
@@ -64,9 +65,13 @@
 
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
-      user-specific-dir (concat dotfiles-dir "extra-" user-login-name))
-(if (file-exists-p user-specific-dir)
-    (add-to-list 'load-path user-specific-dir))
+      user-specific-dir (concat dotfiles-dir user-login-name))
+
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
+
+(when (file-exists-p user-specific-dir)
+  (add-to-list 'load-path user-specific-dir)
+  (mapc #'load (directory-files user-specific-dir nil ".*el$")))
+
 ;;; init.el ends here
