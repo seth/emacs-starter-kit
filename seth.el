@@ -1,6 +1,10 @@
-(setq sf-lisp-dir (concat dotfiles-dir "sf-list"))
-(mapc (lambda (dir) (add-to-list 'load-path dir))
-      (cons sf-lisp-dir '("bbdb" "epg-0.0.16")))
+(setq sf-lisp-dir (concat dotfiles-dir "sf-lisp"))
+(add-to-list 'load-path sf-lisp-dir)
+
+(setq sf-lisp-subdirs
+      '("bdb" "epg-0.0.16"))
+(mapc (lambda (dir) (add-to-list 'load-path (concat sf-lisp-dir "/" dir)))
+      sf-lisp-subdirs)
 (setq tool-bar-mode nil
       visible-bell nil
       ring-bell-function '(lambda () nil)
@@ -14,7 +18,9 @@
 (require 'sf-email)
 (require 'sf-bbdb)
 (require 'epa-setup)
+(require 'sf-ess)
 (epa-file-enable)
+(load "sf-confluence.el")
 
 (server-start)
 
