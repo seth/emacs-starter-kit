@@ -18,6 +18,7 @@
 (require 'sf-email)
 (require 'sf-bbdb)
 (require 'sf-ess)
+(require 'magit)
 ;(epa-file-enable)
 (load "sf-confluence.el")
 ;; starter kit adds flyspell-mode to text-mode,
