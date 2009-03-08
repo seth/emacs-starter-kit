@@ -2,7 +2,7 @@
 (add-to-list 'load-path sf-lisp-dir)
 
 (setq sf-lisp-subdirs
-      '("bdb" "epg-0.0.16"))
+      '("bdb"))
 (mapc (lambda (dir) (add-to-list 'load-path (concat sf-lisp-dir "/" dir)))
       sf-lisp-subdirs)
 (setq tool-bar-mode nil
@@ -17,9 +17,8 @@
 (require 'sf-misc)
 (require 'sf-email)
 (require 'sf-bbdb)
-(require 'epa-setup)
 (require 'sf-ess)
-(epa-file-enable)
+;(epa-file-enable)
 (load "sf-confluence.el")
 ;; starter kit adds flyspell-mode to text-mode,
 ;; I've been finding it too slow.
@@ -27,4 +26,3 @@
 (remove-hook 'text-mode-hook 'flyspell-mode)
 
 (server-start)
-
