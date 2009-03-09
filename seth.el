@@ -24,6 +24,6 @@
 ;; starter kit adds flyspell-mode to text-mode,
 ;; I've been finding it too slow.
 (setq flyspell-delay 6)
-(remove-hook 'text-mode-hook 'flyspell-mode)
+(remove-hook 'text-mode-hook 'turn-on-flyspell)
 
 (server-start)
